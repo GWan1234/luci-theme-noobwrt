@@ -969,7 +969,7 @@ input,
   border-color: var(--primary);
   color: #ffffff;
 }
-/* unified dark surface system */
+/* accessibility + ui system enhancements for dark mode */
 body,
 .main .main-right,
 header.bg-primary,
@@ -1000,6 +1000,12 @@ header::after {
   border: 1px solid var(--border-color);
   box-shadow: var(--shadow-sm);
 }
+.cbi-section:hover,
+.cbi-section-error:hover,
+.Firewall form:hover {
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow-md);
+}
 .cbi-section > h3:first-child,
 .panel-title,
 .tabs,
@@ -1011,6 +1017,10 @@ header::after {
   color: var(--text-color) !important;
   border-color: var(--border-color) !important;
 }
+.cbi-map-descr,
+.cbi-section-descr {
+  color: var(--text-muted);
+}
 table > tbody > tr:nth-of-type(2n),
 .table > .tbody > .tr:nth-of-type(2n) {
   background-color: var(--surface-muted) !important;
@@ -1018,4 +1028,27 @@ table > tbody > tr:nth-of-type(2n),
 table > tbody > tr:hover,
 .table > .tbody > .tr:hover {
   background-color: rgba(96, 165, 250, 0.12) !important;
+}
+.btn:focus-visible,
+.cbi-button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+.cbi-dropdown:focus-visible {
+  outline: 0;
+  box-shadow: var(--focus-ring);
+}
+.cbi-page-actions {
+  border-top-color: var(--border-color);
+  background: linear-gradient(to top, var(--surface-color) 70%, rgba(17, 24, 39, 0));
+}
+.card-warning,
+.cbi-section.card-warning {
+  border-color: rgba(202, 138, 4, 0.45);
+  background: linear-gradient(180deg, rgba(202, 138, 4, 0.12), var(--surface-color) 44%);
+}
+.card-danger,
+.cbi-section.card-danger {
+  border-color: rgba(220, 38, 38, 0.45);
+  background: linear-gradient(180deg, rgba(220, 38, 38, 0.12), var(--surface-color) 44%);
 }

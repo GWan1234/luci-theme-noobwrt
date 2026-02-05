@@ -5,6 +5,7 @@ const SftpClient = require('ssh2-sftp-client');
 const { Client: SSHClient } = require('ssh2');
 const path = require('path');
 const fs = require('fs').promises;
+const fsSynchronous = require('fs');
 const { execSync } = require('child_process');
 
 // Configuration
@@ -261,6 +262,69 @@ class ThemeSync {
     console.log('✨ Watch mode active. Press Ctrl+C to stop.\n');
   }
 
+  async forceSync() {
+    if (!await this.ensureConnection()) {
+      console.log('❌ Cannot force sync - not connected to router\n');
+      return false;
+    }
+
+    console.log('🔄 Force syncing all files...\n');
+    let uploadCount = 0;
+    let errorCount = 0;
+
+    for (const mapping of PATH_MAPPINGS) {
+      const localPath = path.join(BASE_DIR, mapping.local);
+      
+      try {
+        if (mapping.isFile) {
+          // Single file
+          if (fsSynchronous.existsSync(localPath)) {
+            await this.uploadFile(localPath);
+            uploadCount++;
+          }
+        } else {
+          // Directory - recursively upload all files
+          const files = await this.getAllFiles(localPath);
+          for (const filePath of files) {
+            try {
+              await this.uploadFile(filePath);
+              uploadCount++;
+            } catch (err) {
+              console.error(`❌ Failed to upload ${filePath}: ${err.message}`);
+              errorCount++;
+            }
+          }
+        }
+      } catch (err) {
+        console.error(`❌ Error processing ${mapping.description}: ${err.message}`);
+        errorCount++;
+      }
+    }
+
+    console.log(`\n✅ Force sync complete! Uploaded: ${uploadCount} files${errorCount > 0 ? `, Errors: ${errorCount}` : ''}\n`);
+    return true;
+  }
+
+  async getAllFiles(dir) {
+    const files = [];
+    
+    const items = await fs.readdir(dir, { withFileTypes: true });
+    
+    for (const item of items) {
+      if (item.name.startsWith('.')) continue; // Skip hidden files
+      
+      const fullPath = path.join(dir, item.name);
+      
+      if (item.isDirectory()) {
+        files.push(...await this.getAllFiles(fullPath));
+      } else {
+        files.push(fullPath);
+      }
+    }
+    
+    return files;
+  }
+
   async cleanup() {
     console.log('\n🛑 Shutting down...');
     if (this.reconnectTimeout) {
@@ -289,7 +353,20 @@ async function main() {
   watchLessFiles();
 
   await sync.connect();
-  sync.startWatching();
+  
+  // Check for force sync flag
+  const args = process.argv.slice(2);
+  if (args.includes('--force-sync') || args.includes('-f')) {
+    const success = await sync.forceSync();
+    if (success) {
+      console.log('Starting watch mode...\n');
+      sync.startWatching();
+    } else {
+      await sync.cleanup();
+    }
+  } else {
+    sync.startWatching();
+  }
 }
 
 function watchLessFiles() {

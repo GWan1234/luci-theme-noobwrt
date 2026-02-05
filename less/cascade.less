@@ -2596,38 +2596,8 @@ pre.command-output {
   padding: 1.5rem;
 }
 
-/* unified light surface system */
-body,
-.main .main-right,
-header.bg-primary,
-header::after {
-  background-color: var(--background-color) !important;
-  color: var(--text-color);
-}
-
-.main .main-left {
-  background: var(--menu-bg-color);
-  border-right: 1px solid var(--border-color);
-  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
-}
-
-.tabs,
-.cbi-tabmenu {
-  background: var(--surface-color);
-  border: 1px solid var(--border-color);
-  box-shadow: var(--shadow-sm);
-}
-
-.cbi-tabmenu li,
-.tabs li {
-  background: transparent;
-}
-
-.cbi-section-table-row {
-  background: var(--surface-muted);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-sm);
-}
+/* accessibility + ui system enhancements */
+@import url("theme-enhancements.less");
 
 
 /* page fix */
