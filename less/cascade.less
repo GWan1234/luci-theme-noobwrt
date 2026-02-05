@@ -1623,15 +1623,14 @@ body:not(.Interfaces) .cbi-rowstyle-2:first-child {
       left: 0;
       bottom: 0;
       right: 0;
-      background-image: 
-        repeating-linear-gradient(
-          45deg,
-          transparent,
-          transparent 15px,
-          rgba(255, 255, 255, 0.15) 15px,
-          rgba(255, 255, 255, 0.15) 30px
-        );
-      animation: liveStripe 1.5s linear infinite;
+      background-image:
+        radial-gradient(circle at 10% 50%, rgba(255, 255, 255, 0.25) 0 3px, transparent 4px),
+        radial-gradient(circle at 40% 50%, rgba(255, 255, 255, 0.2) 0 2px, transparent 3px),
+        radial-gradient(circle at 70% 50%, rgba(255, 255, 255, 0.18) 0 2.5px, transparent 3.5px),
+        radial-gradient(circle at 90% 50%, rgba(255, 255, 255, 0.22) 0 3px, transparent 4px);
+      background-size: 120px 100%;
+      background-repeat: repeat-x;
+      animation: bubbleMove 2s linear infinite;
     }
   }
 
@@ -1648,13 +1647,13 @@ body:not(.Interfaces) .cbi-rowstyle-2:first-child {
   }
 }
 
-/* Simple live moving stripe animation */
-@keyframes liveStripe {
+/* Small bubble moving animation */
+@keyframes bubbleMove {
   0% {
     background-position: 0 0;
   }
   100% {
-    background-position: 60px 0;
+    background-position: 120px 0;
   }
 }
 
