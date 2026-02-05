@@ -1636,7 +1636,7 @@ body:not(.Interfaces) .cbi-rowstyle-2:first-child {
   display: flex;
   width: 100%;
   font-size: 0.75rem;
-  background-color: #e9ecef;
+  background-color: var(--surface-elevated);
   border-radius: 0.5rem;
   height: 1rem;
   overflow: hidden;
@@ -1651,7 +1651,7 @@ body:not(.Interfaces) .cbi-rowstyle-2:first-child {
     position: relative;
     overflow: hidden;
 
-    /* Bubble moving effect */
+    /* Subtle moving sheen */
     &::before {
       content: '';
       position: absolute;
@@ -1659,42 +1659,20 @@ body:not(.Interfaces) .cbi-rowstyle-2:first-child {
       left: 0;
       bottom: 0;
       right: 0;
-      background-image:
-        radial-gradient(circle at 8% 25%, rgba(255, 255, 255, 0.22) 0 2px, transparent 3px),
-        radial-gradient(circle at 18% 70%, rgba(255, 255, 255, 0.18) 0 3px, transparent 4px),
-        radial-gradient(circle at 28% 40%, rgba(255, 255, 255, 0.2) 0 2.5px, transparent 3.5px),
-        radial-gradient(circle at 38% 80%, rgba(255, 255, 255, 0.16) 0 1.5px, transparent 2.5px),
-        radial-gradient(circle at 48% 30%, rgba(255, 255, 255, 0.24) 0 3.5px, transparent 4.5px),
-        radial-gradient(circle at 58% 60%, rgba(255, 255, 255, 0.14) 0 2px, transparent 3px),
-        radial-gradient(circle at 68% 20%, rgba(255, 255, 255, 0.2) 0 3px, transparent 4px),
-        radial-gradient(circle at 78% 75%, rgba(255, 255, 255, 0.18) 0 2px, transparent 3px),
-        radial-gradient(circle at 88% 35%, rgba(255, 255, 255, 0.22) 0 2.5px, transparent 3.5px),
-        radial-gradient(circle at 96% 55%, rgba(255, 255, 255, 0.16) 0 1.8px, transparent 2.8px);
-      background-size: 160px 100%;
+      background-image: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.08),
+        rgba(255, 255, 255, 0.35),
+        rgba(255, 255, 255, 0.08)
+      );
+      background-size: 120px 100%;
       background-repeat: repeat-x;
-      animation: bubbleMove 2.2s linear infinite;
+      animation: progressSheen 1.8s linear infinite;
+      opacity: 0.55;
     }
 
     &::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      right: 0;
-      background-image:
-        radial-gradient(circle at 12% 55%, rgba(255, 255, 255, 0.12) 0 1.5px, transparent 2.5px),
-        radial-gradient(circle at 24% 20%, rgba(255, 255, 255, 0.15) 0 2.2px, transparent 3.2px),
-        radial-gradient(circle at 36% 85%, rgba(255, 255, 255, 0.1) 0 1.2px, transparent 2.2px),
-        radial-gradient(circle at 50% 45%, rgba(255, 255, 255, 0.14) 0 2.8px, transparent 3.8px),
-        radial-gradient(circle at 62% 15%, rgba(255, 255, 255, 0.12) 0 1.6px, transparent 2.6px),
-        radial-gradient(circle at 74% 65%, rgba(255, 255, 255, 0.16) 0 2.4px, transparent 3.4px),
-        radial-gradient(circle at 86% 30%, rgba(255, 255, 255, 0.11) 0 1.4px, transparent 2.4px),
-        radial-gradient(circle at 98% 78%, rgba(255, 255, 255, 0.13) 0 2px, transparent 3px);
-      background-size: 220px 100%;
-      background-repeat: repeat-x;
-      animation: bubbleMoveSlow 3.4s linear infinite reverse;
-      opacity: 0.9;
+      content: none;
     }
   }
 
@@ -1711,22 +1689,13 @@ body:not(.Interfaces) .cbi-rowstyle-2:first-child {
   }
 }
 
-/* Bubble moving animations */
-@keyframes bubbleMove {
+/* Progress sheen animation */
+@keyframes progressSheen {
   0% {
     background-position: 0 0;
   }
   100% {
-    background-position: 160px 0;
-  }
-}
-
-@keyframes bubbleMoveSlow {
-  0% {
-    background-position: 0 0;
-  }
-  100% {
-    background-position: 220px 0;
+    background-position: 120px 0;
   }
 }
 
