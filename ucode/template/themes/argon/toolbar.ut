@@ -295,6 +295,9 @@ body.dark-theme .theme-toggle svg {
 		} else {
 			loadDarkCSS();
 		}
+		setTimeout(function() {
+			window.location.reload();
+		}, 200);
 	});
 })();
 //]]></script>
