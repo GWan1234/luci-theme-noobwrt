@@ -289,6 +289,18 @@ h4 {
 .cbi-progressbar div {
   background-color: var(--primary) !important;
 }
+progress {
+  background-color: var(--surface-muted);
+}
+progress::-webkit-progress-bar {
+  background-color: var(--surface-muted);
+}
+progress::-webkit-progress-value {
+  background-color: var(--primary);
+}
+progress::-moz-progress-bar {
+  background-color: var(--primary);
+}
 .cbi-section-table .cbi-section-table-titles .cbi-section-table-cell {
   background-color: #1e1e1f;
 }
