@@ -2767,9 +2767,22 @@ body:not(.Interfaces) .cbi-rowstyle-2:first-child {
   display: block;
   position: absolute;
   height: 100%;
-  background-color: var(--primary);
+  background-color: #10b981;
   border-radius: 0.5rem;
   transition: width 0.3s;
+  position: relative;
+  overflow: hidden;
+  /* Simple moving stripe effect */
+}
+.cbi-progressbar > div::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-image: repeating-linear-gradient(45deg, transparent, transparent 15px, rgba(255, 255, 255, 0.15) 15px, rgba(255, 255, 255, 0.15) 30px);
+  animation: liveStripe 1.5s linear infinite;
 }
 .cbi-progressbar::after {
   content: attr(title);
@@ -2781,6 +2794,15 @@ body:not(.Interfaces) .cbi-rowstyle-2:first-child {
   text-align: center;
   line-height: 1rem;
   z-index: 2;
+}
+/* Simple live moving stripe animation */
+@keyframes liveStripe {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 60px 0;
+  }
 }
 #modal_overlay {
   position: fixed;
