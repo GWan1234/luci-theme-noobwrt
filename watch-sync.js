@@ -314,20 +314,20 @@ function watchLessFiles() {
       console.log('🔨 Compiling LESS to CSS...');
       
       if (fileName === 'cascade.less') {
-        execSync('lessc less/cascade.less htdocs/luci-static/argon/css/cascade.css', { 
+        execSync('npx lessc less/cascade.less htdocs/luci-static/argon/css/cascade.css', { 
           cwd: BASE_DIR,
           stdio: 'pipe'
         });
         console.log('✅ Compiled: cascade.css');
       } else if (fileName === 'dark.less') {
-        execSync('lessc less/dark.less htdocs/luci-static/argon/css/dark.css', { 
+        execSync('npx lessc less/dark.less htdocs/luci-static/argon/css/dark.css', { 
           cwd: BASE_DIR,
           stdio: 'pipe'
         });
         console.log('✅ Compiled: dark.css');
       } else {
         // For other LESS files that are imports, compile all
-        execSync('lessc less/cascade.less htdocs/luci-static/argon/css/cascade.css && lessc less/dark.less htdocs/luci-static/argon/css/dark.css', { 
+        execSync('npx lessc less/cascade.less htdocs/luci-static/argon/css/cascade.css && npx lessc less/dark.less htdocs/luci-static/argon/css/dark.css', { 
           cwd: BASE_DIR,
           stdio: 'pipe'
         });
