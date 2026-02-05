@@ -295,6 +295,8 @@ body.dark-theme .theme-toggle svg {
 		} else {
 			loadDarkCSS();
 		}
+		// Reload page after short delay to apply theme changes throughout UI
+		setTimeout(() => window.location.reload(), 200);
 	});
 })();
 //]]></script>
