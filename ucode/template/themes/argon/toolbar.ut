@@ -1,0 +1,227 @@
+{#
+	Argon Theme - Compact Toolbar
+	Material Design Toolbar with navbar icons
+	Copyright 2025 nooblk-98
+-#}
+
+<style>
+.toolbar-container {
+	position: fixed;
+	right: 12px;
+	top: 50%;
+	transform: translateY(-50%);
+	z-index: 999;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 4px;
+	background: rgba(255, 255, 255, 0.95);
+	padding: 8px;
+	border-radius: 12px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.toolbar-fab {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	background: linear-gradient(135deg, #5e72e4 0%, #4a3fa3 100%);
+	color: white;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 0 2px 6px rgba(94, 114, 228, 0.3);
+	transition: all 0.3s ease;
+	padding: 0;
+	margin-bottom: 4px;
+}
+
+.toolbar-fab svg {
+	width: 20px;
+	height: 20px;
+}
+
+.toolbar-fab:hover {
+	transform: scale(1.1);
+	box-shadow: 0 3px 10px rgba(94, 114, 228, 0.4);
+}
+
+.toolbar-fab:active {
+	transform: scale(0.95);
+}
+
+.toolbar-menu {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+	align-items: center;
+	opacity: 1;
+	visibility: visible;
+	pointer-events: auto;
+}
+
+.toolbar-item {
+	width: 40px;
+	height: 40px;
+	border-radius: 8px;
+	background: transparent;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: all 0.2s ease;
+	text-decoration: none;
+	padding: 0;
+	overflow: hidden;
+	position: relative;
+}
+
+.toolbar-item img {
+	width: 24px;
+	height: 24px;
+	object-fit: contain;
+	filter: opacity(0.7);
+	transition: filter 0.2s ease;
+}
+
+.toolbar-item:hover {
+	background: rgba(94, 114, 228, 0.1);
+	border-radius: 8px;
+}
+
+.toolbar-item:hover img {
+	filter: opacity(1);
+}
+
+.toolbar-item:active {
+	transform: scale(0.95);
+}
+
+/* Tooltip */
+.toolbar-item:hover::after {
+	content: attr(title);
+	position: absolute;
+	right: 45px;
+	background: rgba(0, 0, 0, 0.8);
+	color: white;
+	padding: 4px 8px;
+	border-radius: 4px;
+	font-size: 11px;
+	white-space: nowrap;
+	pointer-events: none;
+	z-index: 1000;
+}
+
+@media (max-width: 768px) {
+	.toolbar-container {
+		right: 8px;
+		padding: 6px;
+		gap: 2px;
+	}
+
+	.toolbar-fab,
+	.toolbar-item {
+		width: 36px;
+		height: 36px;
+	}
+
+	.toolbar-item img {
+		width: 20px;
+		height: 20px;
+	}
+}
+</style>
+
+<div class="toolbar-container">
+	<button class="toolbar-fab active" id="toolbar-fab" aria-label="Toggle Toolbar">
+		<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+			<circle cx="12" cy="12" r="1"></circle>
+			<circle cx="19" cy="12" r="1"></circle>
+			<circle cx="5" cy="12" r="1"></circle>
+		</svg>
+	</button>
+
+	<div class="toolbar-menu active" id="toolbar-menu">
+		<!-- Dashboard -->
+		<a href="/admin/" class="toolbar-item" title="Dashboard">
+			<img src="/luci-static/argon/navbar/settings.png" alt="Dashboard" loading="lazy">
+		</a>
+
+		<!-- Status -->
+		<a href="/admin/status/overview" class="toolbar-item" title="Status">
+			<img src="/luci-static/argon/navbar/signal.png" alt="Status" loading="lazy">
+		</a>
+
+		<!-- Network -->
+		<a href="/admin/network/interfaces" class="toolbar-item" title="Network">
+			<img src="/luci-static/argon/navbar/network.png" alt="Network" loading="lazy">
+		</a>
+
+		<!-- Wireless -->
+		<a href="/admin/network/wireless" class="toolbar-item" title="Wireless">
+			<img src="/luci-static/argon/navbar/wifi.png" alt="Wireless" loading="lazy">
+		</a>
+
+		<!-- Firewall -->
+		<a href="/admin/system/firewall" class="toolbar-item" title="Firewall">
+			<img src="/luci-static/argon/navbar/firewall.png" alt="Firewall" loading="lazy">
+		</a>
+
+		<!-- System -->
+		<a href="/admin/system/system" class="toolbar-item" title="System">
+			<img src="/luci-static/argon/navbar/settings.png" alt="System" loading="lazy">
+		</a>
+
+		<!-- Services -->
+		<a href="/admin/system/startup" class="toolbar-item" title="Services">
+			<img src="/luci-static/argon/navbar/terminal.png" alt="Services" loading="lazy">
+		</a>
+
+		<!-- VPN -->
+		<a href="/admin/vpn" class="toolbar-item" title="VPN">
+			<img src="/luci-static/argon/navbar/vpn.png" alt="VPN" loading="lazy">
+		</a>
+
+		<!-- Files -->
+		<a href="/admin/system/files" class="toolbar-item" title="Files">
+			<img src="/luci-static/argon/navbar/files.png" alt="Files" loading="lazy">
+		</a>
+
+		<!-- Log -->
+		<a href="/admin/status/logs" class="toolbar-item" title="System Log">
+			<img src="/luci-static/argon/navbar/info.png" alt="System Log" loading="lazy">
+		</a>
+
+		<!-- Info -->
+		<a href="javascript:void(0);" class="toolbar-item" id="info-toggle" title="Info">
+			<img src="/luci-static/argon/navbar/cell.png" alt="Info" loading="lazy">
+		</a>
+	</div>
+</div>
+
+<script type="text/javascript">//<![CDATA[
+(function() {
+	const fab = document.getElementById('toolbar-fab');
+	const menu = document.getElementById('toolbar-menu');
+
+	// Toggle toolbar menu
+	fab.addEventListener('click', function() {
+		menu.classList.toggle('active');
+		fab.classList.toggle('active');
+	});
+
+	// Close menu when clicking outside
+	document.addEventListener('click', function(e) {
+		if (!e.target.closest('.toolbar-container')) {
+			// Don't close - keep expanded by default
+			// menu.classList.remove('active');
+			// fab.classList.remove('active');
+		}
+	});
+})();
+//]]></script>

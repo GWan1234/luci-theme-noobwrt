@@ -129,6 +129,10 @@
 	class="lang_{{ dispatcher.lang }} {{ node?.title ? ` - ${striptags(node.title)}` : '' }} {% if (ctx.authsession): %}logged-in{% endif %}"
 	data-page="{{ entityencode(join('-', ctx.request_path), true) }}">
 
+	<!-- Toolbar Start -->
+	{% include("themes/" + theme + "/toolbar") %}
+	<!-- Toolbar End -->
+
 	<div class="main">
 		<div class="main-left" id="mainmenu" style="display:none">
 			<div class="sidenav-header d-flex align-items-center">
