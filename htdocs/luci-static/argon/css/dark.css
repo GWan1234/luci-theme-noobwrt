@@ -990,6 +990,8 @@ header::after {
 .cbi-section-error,
 #iptables,
 .Firewall form,
+.cbi-section-node,
+.cbi-section-table,
 #cbi-network > .cbi-section-node,
 #cbi-wireless > .cbi-section-node,
 #cbi-wireless > #wifi_assoclist_table,
@@ -998,6 +1000,8 @@ header::after {
 [data-page="admin-system-opkg"] #maincontent > .container {
   background: var(--surface-color) !important;
   border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  overflow: hidden;
   box-shadow: var(--shadow-sm);
 }
 .cbi-section:hover,
