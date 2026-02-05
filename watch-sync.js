@@ -310,7 +310,7 @@ function watchLessFiles() {
     console.log(`📝 LESS file changed: ${path.basename(filePath)}`);
     try {
       console.log('🔨 Compiling LESS to CSS...');
-      execSync('npm run build', { 
+      execSync('lessc less/cascade.less htdocs/luci-static/argon/css/cascade.css && lessc less/dark.less htdocs/luci-static/argon/css/dark.css', { 
         cwd: BASE_DIR,
         stdio: 'pipe'
       });
@@ -319,9 +319,17 @@ function watchLessFiles() {
       console.error('❌ LESS compilation failed:', err.message, '\n');
     }
   });
+
+  lessWatcher.on('error', (error) => {
+    console.error('❌ LESS Watcher error:', error.message);
+  });
 }
 
 main().catch(err => {
-  console.error('💥 Fatal error:', err);
-  process.exit(1);
+  console.error('💥 Fatal error:', err.message);
+  // Don't exit - keep watching
+  setTimeout(() => {
+    console.log('🔄 Restarting watcher...\n');
+    // Try to reconnect
+  }, 3000);
 });

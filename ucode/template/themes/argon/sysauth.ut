@@ -170,7 +170,6 @@
 							type="password" 
 							name="luci_password" 
 							placeholder="{{ _('Password') }}"
-							required
 						/>
 					</div>
 				</div>
