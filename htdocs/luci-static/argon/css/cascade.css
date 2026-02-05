@@ -52,7 +52,7 @@
   --blur-opacity: 0.5;
   --blur-radius-dark: 10px;
   --blur-opacity-dark: 0.5;
-  --font-family-sans-serif: "Google Sans", "Microsoft Yahei", "WenQuanYi Micro Hei", "sans-serif", "Helvetica Neue", "Helvetica", "Hiragino Sans GB";
+  --font-family-sans-serif: "Red Hat Display", "Google Sans", "Microsoft Yahei", "WenQuanYi Micro Hei", "sans-serif", "Helvetica Neue", "Helvetica", "Hiragino Sans GB";
   --dropdown-arrow-icon: url("data:image/svg+xml;charset=utf-8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBmaWxsPSJjdXJyZW50Q29sb3IiIGQ9Ik01LjI5MyA5LjI5M2ExIDEgMCAwIDEgMS40MTQgMEwxMiAxNC41ODZsNS4yOTMtNS4yOTNhMSAxIDAgMSAxIDEuNDE0IDEuNDE0bC02IDZhMSAxIDAgMCAxLTEuNDE0IDBsLTYtNmExIDEgMCAwIDEgMC0xLjQxNCIvPjwvc3ZnPg==");
 }
 /*
@@ -764,7 +764,7 @@ body:has(.login-container-md) {
   margin-right: 45px;
   font-size: 1.25rem;
   font-weight: 700;
-  font-family: "TypoGraphica";
+  font-family: "Red Hat Display", "TypoGraphica";
   word-break: break-word;
 }
 .login-page .login-container .login-form .brand:hover {
@@ -948,9 +948,9 @@ body:has(.login-container-md) {
   margin-bottom: 20px;
   text-decoration: none;
 }
-.icon-md {
-  width: 60px;
-  height: 60px;
+.brand-logo-md {
+  max-width: 200px;
+  height: auto;
   object-fit: contain;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
 }
@@ -1085,6 +1085,25 @@ body:has(.login-container-md) {
   width: 18px;
   height: 18px;
   transition: transform 0.3s ease;
+}
+.theme-credit-md {
+  text-align: center;
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+.theme-credit-md a {
+  font-size: 12px;
+  color: #000;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.8), 0 0 16px rgba(255, 255, 255, 0.6);
+}
+.theme-credit-md a:hover {
+  color: var(--primary);
+  text-decoration: underline;
+  text-shadow: 0 0 12px #ffffff, 0 0 20px rgba(255, 255, 255, 0.8);
 }
 @media (max-width: 480px) {
   .login-card-md {

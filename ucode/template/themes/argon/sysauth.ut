@@ -114,15 +114,13 @@
 	<!-- Login Container Start (Centered Material Design) -->
 	<div class="login-container-md">
 		<div class="login-card-md">
-			<!-- Logo Start -->
+			<!-- Brand Logo Start -->
 			<div class="login-header-md">
 				<a class="brand-md" href="/">
-					<img src="{{ media }}/img/argon.svg" class="icon-md" alt="Logo">
+					<img src="{{ media }}/brand.png" class="brand-logo-md" alt="NoobWRT">
 				</a>
-				<h1 class="brand-title-md">{{ hostname }}</h1>
-				<p class="brand-subtitle-md">{{ _('Router Management') }}</p>
 			</div>
-			<!-- Logo End -->
+			<!-- Brand Logo End -->
 
 			<!-- Login Form Start -->
 			<form class="form-login-md" method="post" action="{{ http.getenv("REQUEST_URI") }}">
@@ -185,6 +183,14 @@
 
 			</form>
 			<!-- Login Form End -->
+
+			<!-- Theme Credit Start -->
+			<div class="theme-credit-md">
+				<a href="https://github.com/nooblk-98" target="_blank" rel="noopener noreferrer">
+					theme by nooblk
+				</a>
+			</div>
+			<!-- Theme Credit End -->
 
 			<script type="text/javascript">//<![CDATA[
 				var input = document.getElementsByName('luci_password')[0];
