@@ -13,19 +13,11 @@ LUCI_DEPENDS:=+wget +jsonfilter
 PKG_VERSION:=1.1.0
 PKG_RELEASE:=20250722
 
-define Package/luci-theme-noobwrt/conffiles
-/etc/config/luci
-endef
-
-define Build/Prepare
-	$(call Build/Prepare/Default)
-	$(CP) ./src/* $(PKG_BUILD_DIR)/
-endef
-
+# This is a pre-compiled theme, so we override the default build steps
 define Build/Compile
-	$(call LuCI/CompileCss,$(PKG_BUILD_DIR)/htdocs/luci-static/noobwrt/css)
 endef
 
-include $(TOPDIR)/feeds/luci/luci.mk
+define Build/Install
+endef
 
 # call BuildPackage - OpenWrt buildroot signature
