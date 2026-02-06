@@ -12,12 +12,8 @@ LUCI_TITLE:=NoobWRT Theme for LuCI
 LUCI_DEPENDS:=+wget +jsonfilter
 PKG_VERSION:=1.1.0
 PKG_RELEASE:=20250722
+LUCI_PKGARCH:=all
 
-# This is a pre-compiled theme, so we override the default build steps
-define Build/Compile
-endef
-
-define Build/Install
-endef
+include $(TOPDIR)/feeds/luci/luci.mk
 
 # call BuildPackage - OpenWrt buildroot signature
