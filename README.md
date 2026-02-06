@@ -47,15 +47,7 @@ It also supports automatic and manual switching between light and dark modes.
 <img src="/Screenshots/pc_2.png">
 </div>
 
-## Key Features
-
-- Clean Layout.
-- Adapted to mobile display.
-- Customizable theme colors.
-- Support for using Bing images as login background.
-- Support for custom uploading of images or videos as login background.
-- Automatically switch between light and dark modes with the system, and can also be set to a fixed mode.
-- Settings plugin with extensions [luci-app-noobwrt-config][config-link]
+## luci-theme-noobwrt
 
 > **About this theme **
 >
@@ -75,34 +67,10 @@ make menuconfig #choose LUCI->Theme->Luci-theme-noobwrt
 make -j1 V=s
 ```
 
-## Notice
-
-- Chrome browser is highly recommended. There are some new css3 features used in this theme, currently only Chrome has the best compatibility.
-- Microsoft has officially retired Internet Explorer, RIP IE🙏<del>Currently, the mainline version of the IE series has bugs that need to be addressed.</del>
-- FireFox does not enable the backdrop-filter by default, [see here](https://developer.mozilla.org/zh-CN/docs/Web/CSS/backdrop-filter) for the opening method.
-
-## Screenshots
-
-![desktop](/Screenshots/screenshot_pc.jpg)
-![mobile](/Screenshots/screenshot_phone.jpg)
-
-## Contributors
-
-<a href="https://github.com/jerrykuku/luci-theme-noobwrt/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=jerrykuku/luci-theme-noobwrt&v=2" />
-</a>
-
-Made with [contrib.rocks](https://contrib.rocks).
-
-## Related Projects
-
-- [luci-app-noobwrt-config](https://github.com/jerrykuku/luci-app-noobwrt-config): NoobWrt theme config plugin
-- [openwrt-package](https://github.com/jerrykuku/openwrt-package): My OpenWrt package
-- [CasaOS](https://github.com/IceWhaleTech/CasaOS): A simple, easy-to-use, elegant open-source Personal Cloud system (My current main project)
-
 ## Credits
 
 [luci-theme-material](https://github.com/LuttyYang/luci-theme-material/)
+[luci-theme-argon](https://github.com/jerrykuku/luci-theme-argon/)
 
 
 
