@@ -24,7 +24,7 @@ on:
     branches:
       - "master"
     paths:
-      - "luci-theme-noobwrt/Makefile"
+      - "Makefile"
 env:
   TZ: Asia/Shanghai
 
