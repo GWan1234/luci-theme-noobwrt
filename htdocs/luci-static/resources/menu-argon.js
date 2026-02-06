@@ -187,7 +187,7 @@ const SlideAnimations = {
 };
 
 /**
- * NoobWrt Theme Menu Module
+ * Argon Theme Menu Module
  * Handles rendering and interaction of the main navigation menu and sidebar
  */
 return baseclass.extend({
@@ -459,5 +459,3 @@ return baseclass.extend({
 		}
 	}
 });
-
-
