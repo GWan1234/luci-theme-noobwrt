@@ -57,66 +57,22 @@ It also supports automatic and manual switching between light and dark modes.
 - Automatically switch between light and dark modes with the system, and can also be set to a fixed mode.
 - Settings plugin with extensions [luci-app-noobwrt-config][config-link]
 
-> **Upcoming Version **
+> **About this theme **
 >
-> "The current theme uses Less for CSS construction, and the method for switching between light and dark modes is relatively primitive. Meanwhile, the official theme has already switched to the UT template. I am exploring a way to build the theme template using modern front-end development tools, initially settling on a solution using Vite + UnoCSS. This approach will utilize a proxy server for debugging and also support HMR (Hot Module Replacement), significantly improving development speed. Currently, the basic development framework has been set up, but due to a busy schedule, I still need some time to migrate the existing styles. Stay tuned!"
+> "This theme originates from luci-theme-aragon but has been extensively modified and enhanced with additional features specifically for the NoobWrt firmware. It provides a clean, modern, and highly customizable interface for your OpenWrt router, focusing on user experience and visual appeal."
 
-## Branch Introduction
 
-There are currently two main branches that are adapted to different versions of the **OpenWrt** source code.  
-The table below will provide a detailed introduction:
-
-| Branch | Version | Description                        | Matching source                                           |
-| ------ | ------- | ---------------------------------- | --------------------------------------------------------- |
-| master | v2.x.x  | Support the latest version of LuCI | [Official OpenWrt][official] • [ImmortalWrt][immortalwrt] |
-| 18.06 (deprecated) | v1.x.x  | Support the 18.06 version of LuCI   | [Lean's LEDE][lede]                                         |
-
-## Version History
-
-The latest version is v2.4.3 [Click here][en-us-release-log] to view the full version history record.
 
 ## Getting started
 
-### Build for Lean's LEDE project (deprecated)
-
-```bash
-cd lede/package/lean
-rm -rf luci-theme-noobwrt
-git clone -b 18.06 https://github.com/jerrykuku/luci-theme-noobwrt.git luci-theme-noobwrt
-make menuconfig #choose LUCI->Theme->Luci-theme-noobwrt
-make -j1 V=s
-```
 
 ### Build for OpenWrt official SnapShots and ImmortalWrt
 
 ```bash
 cd openwrt/package
-git clone https://github.com/jerrykuku/luci-theme-noobwrt.git
+git clone https://github.com/nooblk-98/luci-theme-noobwrt.git
 make menuconfig #choose LUCI->Theme->Luci-theme-noobwrt
 make -j1 V=s
-```
-
-### Install for LuCI 18.06 ( Lean's LEDE )
-
-```bash
-wget --no-check-certificate https://github.com/jerrykuku/luci-theme-noobwrt/releases/download/v1.8.2/luci-theme-noobwrt_1.8.2-20230609_all.ipk
-opkg install luci-theme-noobwrt*.ipk
-```
-
-### Install for OpenWrt official SnapShots and ImmortalWrt
-
-```bash
-opkg install luci-compat
-opkg install luci-lib-ipkg
-wget --no-check-certificate https://github.com/jerrykuku/luci-theme-noobwrt/releases/download/v2.3.2/luci-theme-noobwrt_2.3.2-r20250207_all.ipk
-opkg install luci-theme-noobwrt*.ipk
-```
-
-### Install luci-app-noobwrt-config
-
-```bash
-wget --no-check-certificate -O luci-app-noobwrt-config_0.9_all.ipk https://github.com/jerrykuku/luci-app-noobwrt-config/releases/download/v0.9/luci-app-noobwrt-config_0.9_all.ipk
-opkg install luci-app-noobwrt-config*.ipk
 ```
 
 ## Notice
