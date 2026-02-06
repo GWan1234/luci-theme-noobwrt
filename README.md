@@ -32,9 +32,7 @@
 
 # A brand new LuCI theme NoobWRT
 
-NoobWrt is <strong>a clean and tidy OpenWrt LuCI theme</strong> that allows<br/>
-users to customize their login interface with images or videos.  
-It also supports automatic and manual switching between light and dark modes.
+NoobWrt is <strong>a clean and tidy OpenWrt LuCI theme</strong> that allows users to customize their login interface with images or videos.  It also supports automatic and manual switching between light and dark modes.
 
 
 <p align="center">
