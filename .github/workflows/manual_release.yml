@@ -88,7 +88,7 @@ jobs:
           key: openwrt-sdk-snapshot-x86-64
 
       - name: Initialization environment
-        if: steps.cache-sdk.outputs.cache-hit != 'true'
+        # if: steps.cache-sdk.outputs.cache-hit != 'true'
         env:
           url_sdk: https://archive.openwrt.org/releases/24.10.0/targets/x86/64/openwrt-sdk-24.10.0-x86-64_gcc-13.3.0_musl.Linux-x86_64.tar.zst
         run: |
