@@ -865,27 +865,27 @@ select[multiple="multiple"] {
   animation-delay: 2.9s;
 }
 .login-page .login-container .login-form .login-card .login-hero .hero-icon {
-  width: 8rem;
-  height: 8rem;
+  width: 9.5rem;
+  height: 9.5rem;
+  border-radius: 50%;
+  background: rgba(109, 93, 246, 0.08);
+  border: 1px solid rgba(109, 93, 246, 0.25);
+  box-shadow: 0 0 28px rgba(109, 93, 246, 0.25), inset 0 0 18px rgba(109, 93, 246, 0.12);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .login-page .login-container .login-form .login-card .login-hero .hero-icon img {
-  width: 5.2rem;
-  height: 5.2rem;
+  width: 6.3rem;
+  height: 6.3rem;
 }
 .login-page .login-container .login-form .login-card .login-hero .hero-text {
   text-align: center;
 }
-.login-page .login-container .login-form .login-card .login-hero .hero-title {
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: #1f2a44;
-}
-.login-page .login-container .login-form .login-card .login-hero .hero-subtitle {
-  font-size: 0.9rem;
-  color: #6b7280;
+.login-page .login-container .login-form .login-card .login-hero .hero-brand {
+  max-width: 12rem;
+  height: auto;
+  display: inline-block;
 }
 .login-page .login-container .login-form .login-card .login-panel {
   padding: 2.5rem 2.5rem 2.25rem;
@@ -4505,12 +4505,16 @@ div[style*="display:grid;grid-template-columns:repeat"] .ifacebox .ifacebox-body
     height: 8px;
   }
   .login-page .login-container .login-form .login-card .login-hero .hero-icon {
-    width: 6.5rem;
-    height: 6.5rem;
+    width: 7.5rem;
+    height: 7.5rem;
+    border-radius: 50%;
   }
   .login-page .login-container .login-form .login-card .login-hero .hero-icon img {
-    width: 4.2rem;
-    height: 4.2rem;
+    width: 5.1rem;
+    height: 5.1rem;
+  }
+  .login-page .login-container .login-form .login-card .login-hero .hero-brand {
+    max-width: 9rem;
   }
   .login-page .login-container .login-form .login-card .login-panel {
     padding: 1.8rem 1.5rem 1.5rem;

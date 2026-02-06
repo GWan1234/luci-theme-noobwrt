@@ -134,8 +134,7 @@
 						<img src="{{ media }}/img/logo.png" alt="router">
 					</div>
 					<div class="hero-text">
-						<div class="hero-title">{{ hostname }}</div>
-						<div class="hero-subtitle">{{ _('Router Access') }}</div>
+						<img class="hero-brand" src="{{ media }}/img/brand.png" alt="{{ hostname }}">
 					</div>
 				</div>
 				<div class="login-panel">
