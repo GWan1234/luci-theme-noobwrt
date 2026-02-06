@@ -114,32 +114,58 @@
 	<!-- Login Container Start -->
 	<div class="login-container">
 		<div class="login-form">
-			<!-- Logo Start -->
-			<a class="brand" href="/"><img src="{{ media }}/img/noobwrt.svg" class="icon">
-				<span class="brand-text">{{ hostname }}</span>
-			</a>
-			<!-- Logo End -->
-			<!-- Login Form Start -->
-			<form class="form-login" method="post" action="{{ http.getenv("REQUEST_URI") }}">
-
-				{%- if (fuser): %}
-				<div class="errorbox">{{ _('Invalid username and/or password! Please try again.') }}</div>
-				{% endif -%}
-
-				<div class="input-container">
-					<div class="input-group user-icon">
-						<input class="cbi-input-user" id="cbi-input-user" type="text" name="luci_username" value="{{ entityencode(duser, true) }}" />
-						<label class="border" for="cbi-input-user"></label>
+			<div class="login-card split">
+				<div class="login-hero">
+					<div class="hero-particles">
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
 					</div>
-					<div class="input-group pass-icon">
-						<input class="cbi-input-password" id="cbi-input-password" type="password" name="luci_password" />
-						<label class="border" for="cbi-input-password"></label>
+					<div class="hero-icon">
+						<img src="{{ media }}/img/logo.png" alt="router">
+					</div>
+					<div class="hero-text">
+						<div class="hero-title">{{ hostname }}</div>
+						<div class="hero-subtitle">{{ _('Router Access') }}</div>
 					</div>
 				</div>
-				<div>
-					<input type="submit" value="{{ _('Log in') }}" class="cbi-button cbi-button-apply" />
+				<div class="login-panel">
+					<!-- Title Start -->
+					<div class="brand-text-only">{{ _('Router Admin Login') }}</div>
+					<div class="login-subtitle">{{ _('Sign in to manage your router') }}</div>
+					<!-- Title End -->
+					<!-- Login Form Start -->
+					<form class="form-login" method="post" action="{{ http.getenv("REQUEST_URI") }}">
+
+					{%- if (fuser): %}
+					<div class="errorbox">{{ _('Invalid username and/or password! Please try again.') }}</div>
+					{% endif -%}
+
+					<div class="input-container">
+						<div class="input-group user-icon">
+							<input class="cbi-input-user" id="cbi-input-user" type="text" name="luci_username" value="{{ entityencode(duser, true) }}" placeholder="{{ _('Username') }}" />
+							<label class="sr-only" for="cbi-input-user">{{ _('Username') }}</label>
+						</div>
+						<div class="input-group pass-icon">
+							<input class="cbi-input-password" id="cbi-input-password" type="password" name="luci_password" placeholder="{{ _('Password') }}" />
+							<label class="sr-only" for="cbi-input-password">{{ _('Password') }}</label>
+						</div>
+					</div>
+						<div class="form-actions">
+							<input type="submit" value="{{ _('Log in') }}" class="cbi-button cbi-button-apply" />
+						</div>
+					</form>
 				</div>
-			</form>
+			</div>
 			<!-- Login Form End -->
 			<script type="text/javascript">//<![CDATA[
 				var input = document.getElementsByName('luci_password')[0];

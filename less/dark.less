@@ -41,41 +41,84 @@ body {
 .login-page .login-container {
 
     .login-form {
-        background-color: #1e1e1e;
-        -webkit-backdrop-filter: blur(var(--blur-radius-dark)) brightness(0);
-        backdrop-filter: blur(var(--blur-radius-dark)) brightness(0);
-        background-color: rgba(0, 0, 0, var(--blur-opacity-dark));
+            .login-card {
+                background-color: rgba(18, 18, 28, 0.92);
+                -webkit-backdrop-filter: blur(var(--blur-radius-dark)) brightness(0.9);
+                backdrop-filter: blur(var(--blur-radius-dark)) brightness(0.9);
+                border: 1px solid rgba(255, 255, 255, 0.08);
+                box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+
+                .login-hero {
+                    background: linear-gradient(135deg, rgba(33, 33, 44, 0.95), rgba(26, 27, 40, 0.95));
+
+                    .hero-particles {
+                        span {
+                            background: rgba(124, 118, 255, 0.4);
+                            box-shadow: 0 0 18px rgba(124, 118, 255, 0.45);
+                        }
+                    }
+
+                    .hero-title {
+                        color: #e5e7eb;
+                    }
+
+                .hero-subtitle {
+                    color: #9aa0a6;
+                }
+            }
+        }
 
         .brand {
             color: #adb5bd;
         }
 
+        .brand-text-only {
+            color: #f3f4f6;
+        }
+
+        .login-subtitle {
+            color: #b7bdcc;
+            font-weight: 500;
+        }
+
         .form-login {
+            .errorbox {
+                color: #fecaca;
+                background: rgba(220, 38, 38, 0.15);
+                border: 1px solid rgba(248, 113, 113, 0.3);
+            }
+
             .input-group {
                 &::before {
-                    color: #adb5bd;
+                    color: #a1a8b8;
                 }
 
                 input {
-                    background-color: transparent !important;
-                    color: #adb5bd;
-                    border-bottom: #adb5bd 1px solid !important;
-                    border-radius: 0 !important;
-                    border-top: none !important;
-                    border-left: none !important;
-                    border-right: none !important;
-                    box-shadow: none;
+                    background-color: rgba(30, 30, 40, 0.9) !important;
+                    color: #e5e7eb;
+                    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+                    border-radius: 999px !important;
+                    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.35), 0 10px 20px rgba(0, 0, 0, 0.35);
+
+                    &:focus {
+                        border-color: rgba(99, 102, 241, 0.65) !important;
+                        background-color: rgba(36, 36, 48, 0.95) !important;
+                        box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.25);
+                    }
+
+                    &::placeholder {
+                        color: #8f96a8;
+                    }
                 }
 
             }
 
             .cbi-button-apply {
-                background-color: #483d8b !important;
-                background-color: var(--dark-primary) !important;
+                background: linear-gradient(135deg, #7c76ff, #5b8dff) !important;
 
                 &:hover,
                 &:focus {
-                    opacity: 0.9;
+                    opacity: 0.95;
                 }
             }
         }

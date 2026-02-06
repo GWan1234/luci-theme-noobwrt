@@ -561,19 +561,60 @@
     .login-page .login-container {
         margin-left: 0rem !important;
         width: 100%;
+        padding: 1.5rem 1rem;
 
         .login-form {
+            max-width: 22rem;
+
+            .login-card {
+                padding: 0;
+
+                &.split {
+                    grid-template-columns: 1fr;
+                }
+
+                .login-hero {
+                    padding: 2rem 1.5rem 1.2rem;
+
+                    .hero-orbit {
+                        display: none;
+                    }
+
+                    .hero-particles {
+                        span {
+                            width: 6px;
+                            height: 6px;
+                            box-shadow: none;
+                        }
+
+                        span:nth-child(2),
+                        span:nth-child(4),
+                        span:nth-child(12) {
+                            width: 8px;
+                            height: 8px;
+                        }
+                    }
+
+                    .hero-icon {
+                        width: 6.5rem;
+                        height: 6.5rem;
+
+                        img {
+                            width: 4.2rem;
+                            height: 4.2rem;
+                        }
+                    }
+                }
+
+                .login-panel {
+                    padding: 1.8rem 1.5rem 1.5rem;
+                }
+            }
+
             .form-login {
                 .input-group {
                     &::before {
-                        color: #525461;
-                    }
-
-                    input {
-                        color: #525461;
-                        border-bottom: white 1px solid;
-                        border-bottom: var(--white) 1px solid;
-                        border-radius: 0;
+                        color: var(--primary);
                     }
                 }
             }
