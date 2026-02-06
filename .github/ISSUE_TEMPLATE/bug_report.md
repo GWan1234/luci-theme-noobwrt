@@ -25,7 +25,7 @@ If applicable, add screenshots to help explain your problem.
 
 **Openwrt (please complete the following information):**
  - Versiosn: [e.g. 18.06-lean]
- - Theme [e.g. argon]
+ - Theme [e.g. noobwrt]
  - Version [e.g. 2.27]
 
 **Desktop (please complete the following information):**
