@@ -37,11 +37,21 @@ users to customize their login interface with images or videos.
 It also supports automatic and manual switching between light and dark modes.
 
 <p align="center">
-[![license][license-badge]][license]
-[![prs][prs-badge]][prs]
-[![issues][issues-badge]][issues]
-[![release][release-badge]][release]
-[![download][download-badge]][download]
+  <a href="https://github.com/nooblk-98/luci-theme-noobwrt/blob/master/LICENSE">
+    <img src="https://img.shields.io/github/license/nooblk-98/luci-theme-noobwrt?style=flat-square&a=1" alt="license">
+  </a>
+  <a href="https://github.com/nooblk-98/luci-theme-noobwrt/pulls">
+    <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" alt="prs">
+  </a>
+  <a href="https://github.com/nooblk-98/luci-theme-noobwrt/issues/new">
+    <img src="https://img.shields.io/badge/Issues-welcome-brightgreen.svg?style=flat-square" alt="issues">
+  </a>
+  <a href="https://github.com/nooblk-98/luci-theme-noobwrt/releases">
+    <img src="https://img.shields.io/github/v/release/nooblk-98/luci-theme-noobwrt?style=flat-square" alt="release">
+  </a>
+  <a href="https://github.com/nooblk-98/luci-theme-noobwrt/releases">
+    <img src="https://img.shields.io/github/downloads/nooblk-98/luci-theme-noobwrt/total?style=flat-square" alt="download">
+  </a>
 </p>
 
 
