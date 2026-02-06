@@ -207,6 +207,12 @@ body.dark-theme .theme-toggle svg {
 
 	<div class="toolbar-menu active" id="toolbar-menu">
 
+
+		<!-- Home -->
+		<a href="/cgi-bin/luci/admin/status/overview" class="toolbar-item" title="Home">
+			<img src="/luci-static/noobwrt/navbar/home.png" alt="Home" loading="lazy">
+		</a>
+
 		<!-- Status -->
 		<a href="/cgi-bin/luci/admin/modem/modemdata" class="toolbar-item" title="Status">
 			<img src="/luci-static/noobwrt/navbar/signal.png" alt="Status" loading="lazy">
@@ -227,6 +233,11 @@ body.dark-theme .theme-toggle svg {
 		<!-- Data Usage -->
 		<a href="/cgi-bin/luci/admin/tools/vnstat" class="toolbar-item" title="Data Usage">
 			<img src="/luci-static/noobwrt/navbar/network.png" alt="Data Usage" loading="lazy">
+		</a>
+
+		<!-- Nas -->
+		<a href="/cgi-bin/luci/admin/nas/samba4" class="toolbar-item" title="Nas">
+			<img src="/luci-static/noobwrt/navbar/nas.png" alt="Nas" loading="lazy">
 		</a>
 
 		<!-- Wireless -->
