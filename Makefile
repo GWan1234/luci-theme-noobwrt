@@ -16,4 +16,11 @@ CONFIG_LUCI_CSSTIDY:=
 
 include $(TOPDIR)/feeds/luci/luci.mk
 
+# No build system required for LuCI theme
+define Build/Compile
+endef
+
+define Build/Install
+endef
+
 # call BuildPackage - OpenWrt buildroot signature
